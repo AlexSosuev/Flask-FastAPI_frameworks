@@ -34,4 +34,4 @@ class Students(db.Model):
     fags_id = db.Column(db.Integer, db.ForeignKey('fags.id_'), nullable=False)
 
     def __repr__(self):
-        return f'Student({self.name}, {self.last_name})'
+        return f'Students({self.name}, {self.last_name})'

@@ -1,7 +1,7 @@
 import databases 
 import sqlalchemy 
 from fastapi import FastAPI 
-from pydantic import BaseModel 
+from pydantic import BaseModel, Field 
 
 DATABASE_URL = "sqlite:///mydatabase.db" 
 
@@ -17,7 +17,7 @@ users = sqlalchemy.Table(
     sqlalchemy.Column("email", sqlalchemy.String(128)), 
 ) 
 
-engine = create_engine( 
+engine = sqlalchemy.create_engine( 
     DATABASE_URL, connect_args={"check_same_thread": False} 
 ) 
 
